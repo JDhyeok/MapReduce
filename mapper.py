@@ -35,19 +35,19 @@ def mapper(data):
     List : Returning word list from file
 
     """
-    result = {}
+    result = []
 
     for word in data:
-        result[word] = result.get(word, 1)
+        result.append([word, 1])
 
-    return dict(sorted(result.items()))
+    return result
 
 
 def writeOutput(data, name='output.txt'):
     """ Write The Result of Mapper
 
     Params:
-    data (Dict) : Mapped data
+    data (List) : Mapped data
     name (String) : Name of output file
 
     Returns:
@@ -58,8 +58,8 @@ def writeOutput(data, name='output.txt'):
         name += '.txt'
 
     with open(name, 'w') as outFp:
-        for key, val in data.items():
-            outFp.write(key + ' ' + str(val) + '\n')
+        for info in data:
+            outFp.write(info[0] + ' ' + str(info[1]) + '\n')
 
     outFp.close()
 
