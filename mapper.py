@@ -43,7 +43,7 @@ def mapper(data):
     return result
 
 
-def writeOutput(data, name='output.txt'):
+def writeOutput(data, name='mapped_output.txt'):
     """ Write The Result of Mapper
 
     Params:
