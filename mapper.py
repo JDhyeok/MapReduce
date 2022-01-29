@@ -38,9 +38,8 @@ def mapper(data):
     result = {}
 
     for word in data:
-        result[word] = result.get(word, 0) + 1
+        result[word] = result.get(word, 1)
 
-    
     return dict(sorted(result.items()))
 
 
